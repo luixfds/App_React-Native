@@ -2,6 +2,7 @@ import * as React from 'react';
 import { StyleSheet, View, Text, TouchableOpacity, Image,Alert, TextInput, SafeAreaView } from 'react-native';
 import firebase from './connFireBase'
 import AsyncStorage from '@react-native-async-storage/async-storage';
+
 export default function login({navigation}){
     const [User, setUser] = React.useState("");
     const [Pass, setPass] = React.useState(null);
@@ -64,7 +65,7 @@ export default function login({navigation}){
     return(
         <SafeAreaView style={styles.container}>
             
-            <Image style={styles.img2} source={require('../assets/imgs/sesi-senai-fundo.jpg')} blurRadius={1}/>
+            <Image style={styles.img2} source={require('../assets/imgs/suga-logo.png')}/>
             <Image style={styles.img} source={require('../assets/imgs/senai-logo.png')}/>
             <View style={styles.formData} >
                 
@@ -79,27 +80,34 @@ export default function login({navigation}){
 
 const styles = StyleSheet.create({
     container:{
+        backgroundColor: 'white',
         width: '100%',
         height:'100%',
         flex: 1,
         justifyContent: "center",
         alignItems: "center",
         
-    },  
-    // textLogin:{
-    //     fontSize: 20,
-    // },
+    },
     img:{
         zIndex: 20,
         width: "30%",
         margin:0,
         height:"5%",
-        top: "92%",
+        top: "90%",
+       
+        resizeMode:'contain'
+    },
+    img2:{
+        position:'absolute',
+        zIndex: 20,
+        width: "80%",
+        margin:0,
+        height:"30%",
+        top: "10%",
        
         resizeMode:'contain'
     },
     formData:{
-        
         width: "100%",
         height: "100%",
         flex: 1,
@@ -108,7 +116,7 @@ const styles = StyleSheet.create({
     },  
     textUser:{
  
-        backgroundColor: 'white',
+        backgroundColor: '#e8e8e8',
         width: "80%",
         height: 60,
         borderRadius: 50,
@@ -117,7 +125,7 @@ const styles = StyleSheet.create({
         marginBottom: 20
     },
     textPass:{
-        backgroundColor: 'white',
+        backgroundColor: '#e8e8e8',
         width: "80%",
         height: 60,
         borderRadius: 50,

@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
   btnPlus: {
     color: 'white',
     fontSize: 20,
-    backgroundColor: 'black',
+    backgroundColor: '#2b2b2b',
     width: 40,
     height: 40,
     display:'flex',
@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
     left: '85%'
   },
   btnInit:{
-    backgroundColor: '#24B500',
+    backgroundColor: '#75ffbc',
     
     width: '50%',
     height: '10%',
@@ -65,7 +65,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     position:'absolute',
-    backgroundColor: 'black',
+    backgroundColor: '#2b2b2b',
     top: 10,
     right: 10,
     borderRadius: 20
