@@ -20,12 +20,7 @@ function HomeScreen({ navigation }){
           <Text style={styles.textLogOff}>Logoff</Text>
           <Image style={styles.logoff} source={require('../assets/imgs/logoff.png')} blurRadius={1} />
         </TouchableOpacity>
-      {/* <TouchableOpacity
-        style= {styles.btnPlus}
-        onPress={() => navigation.push('Details')}
-      >
-      <Text>➡</Text>
-      </TouchableOpacity> */}
+      {}
     </View>
   );
 }
@@ -96,14 +91,5 @@ const styles = StyleSheet.create({
       width: '100%',
       resizeMode: 'contain'
   },
-  img2:{
-    width: "100%",
-    position:'absolute',
-    bottom:0,
-    top:0,
-    left: 0,
-    right: 0,
-    resizeMode:'cover',
-    
-},
+  
 });

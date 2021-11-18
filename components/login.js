@@ -27,7 +27,6 @@ export default function login({navigation}){
             
                 let user = await userCredential.user;
 
-                //console.log(user.email)
                 AsyncStorage.clear();
                 await AsyncStorage.setItem("logedUser", user.email);
                 
@@ -69,10 +68,10 @@ export default function login({navigation}){
             <Image style={styles.img} source={require('../assets/imgs/senai-logo.png')}/>
             <View style={styles.formData} >
                 
-
+                {/* <text style={styles.textLogin}>login</text> */}
                 <TextInput placeholder="Usuário" type="text" name="userInput" style={styles.textUser} value={User} onChangeText={(User)=> setUser(User)} />
                 <TextInput placeholder="Senha" secureTextEntry={true}  name="passInput" style={styles.textPass} value={Pass} onChangeText={(Pass)=> setPass(Pass)}/>
-                <TouchableOpacity onPress={User !="" && Pass !="" ? () => authenticate() : () => Alert.alert("Login Falhou", "Preencha Todos os campos",[{text: "OK"}])} style={styles.loginEnterBtn}><Text style={styles.textLogin}>Entrar</Text></TouchableOpacity>
+                <TouchableOpacity onPress={User !="" && Pass !="" ? () => authenticate() : () => Alert.alert("Login Falhou", "Preencha Todos os campos",[{text: "OK"}])} style={styles.loginEnterBtn}><Text style={styles.textLogin}>OK</Text></TouchableOpacity>
             </View>
         </SafeAreaView>
     )
@@ -87,24 +86,17 @@ const styles = StyleSheet.create({
         alignItems: "center",
         
     },  
+    // textLogin:{
+    //     fontSize: 20,
+    // },
     img:{
         zIndex: 20,
-        width: "50%",
+        width: "30%",
         margin:0,
-        height:"10%",
-        top: "5%",
+        height:"5%",
+        top: "92%",
        
         resizeMode:'contain'
-    },
-    img2:{
-        width: "100%",
-        position:'absolute',
-        bottom:0,
-        top:0,
-        left: 0,
-        right: 0,
-        resizeMode:'cover',
-        
     },
     formData:{
         
@@ -119,7 +111,7 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
         width: "80%",
         height: 60,
-        borderRadius: 5,
+        borderRadius: 50,
         paddingStart: 15,
         fontSize: 20,
         marginBottom: 20
@@ -128,7 +120,7 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
         width: "80%",
         height: 60,
-        borderRadius: 5,
+        borderRadius: 50,
         paddingStart: 15,
         fontSize: 20,
 
@@ -136,7 +128,7 @@ const styles = StyleSheet.create({
     },
     loginEnterBtn:{
         position:'absolute',
-        width: '30%',
+        width: '80%',
         height: 50,
         backgroundColor: '#FF0000',
         
@@ -144,9 +136,8 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         fontSize: 20,
-        top: '75%',
-        left: '60%',
-        borderRadius: 5,
+        top: '70%',
+        borderRadius: 50,
     },
     textLogin:{
         color: 'white',
