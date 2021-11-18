@@ -7,19 +7,14 @@ function HomeScreen({ navigation }){
   }, []);
   return (
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Image style={styles.img2} source={require('../assets/imgs/sesi-senai-fundo2.jpg')} blurRadius={1} />
       <TouchableOpacity
         style= {styles.btnInit}
         onPress={() => navigation.push('Quests')}
       >
-      <Text style= {styles.btnInitText}>Iniciar Pesquisa</Text>
+      <Image style={styles.btnInitImg} source={require('../assets/imgs/satis.jpeg')} blurRadius={1} />
+      <Text style= {styles.btnInitText}>Pesquisa de Satisfação</Text>
       </TouchableOpacity>
 
-       <Image style={styles.iconImg} source={require('../assets/imgs/satisfacao.png')} />
-        <TouchableOpacity style={styles.logoffBtn}  onPress={() => navigation.push('Login')}>
-          <Text style={styles.textLogOff}>Logoff</Text>
-          <Image style={styles.logoff} source={require('../assets/imgs/logoff.png')} blurRadius={1} />
-        </TouchableOpacity>
       {}
     </View>
   );
@@ -28,68 +23,25 @@ function HomeScreen({ navigation }){
 export default HomeScreen
 
 const styles = StyleSheet.create({
-  innerText: {
-    color: 'red'
-  },
-  btnPlus: {
-    color: 'white',
-    fontSize: 20,
-    backgroundColor: '#2b2b2b',
-    width: 40,
-    height: 40,
-    display:'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    borderRadius: 20,
-    position: 'absolute',
-    top: '90%',
-    left: '85%'
-  },
   btnInit:{
-    backgroundColor: '#75ffbc',
-    
-    width: '50%',
-    height: '10%',
+    backgroundColor: 'white',
+    width: '60%',
+    height: '40%',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: 10,
-    
-  },
-  logoffBtn:{
-    width: 90,
-    
-    height: 40,
-    flex: 1,
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
-    position:'absolute',
-    backgroundColor: '#2b2b2b',
-    top: 10,
-    right: 10,
-    borderRadius: 20
-  },
-  textLogOff:{
-    color: 'white',
-    fontSize: 18
-  },
-  logoff:{
-    top: -1.5,
-    width: 30,
-    height: 30,
-    resizeMode: 'contain',
-
   },
   btnInitText:{
-    color: "white",
+    color: "black",
     fontSize: 20,
   },
-  iconImg:{
-      top: "35%",
-      height: '10%',
-      width: '100%',
-      resizeMode: 'contain'
-  },
+  btnInitImg:{
+    width: '100%',
+    height: '90%',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+  }
   
 });
