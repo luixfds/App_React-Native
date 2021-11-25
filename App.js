@@ -29,7 +29,7 @@ class app extends React.Component {
     return (
 
       <NavigationContainer theme={MyTheme} >
-        <Stack.Navigator style={styles.header} initialRouteName="Comment">
+        <Stack.Navigator style={styles.header} initialRouteName="Login">
           <Stack.Screen style={styles.header} name="Login" component={login} options={{headerShown: false, }} />
           <Stack.Screen style={styles.header} name="Home" component={HomeScreen} options={{headerTitle: () => (<Text style={styles.headerMain}>Sistemas</Text>), headerRight: () => (<Image style={styles.iconImg} source={require('./assets/imgs/senai-logo.png')} />), headerTitleAlign: "start"} }/>
           <Stack.Screen name="Details" component={listScreen}  />
