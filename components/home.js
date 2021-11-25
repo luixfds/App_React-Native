@@ -11,7 +11,7 @@ function HomeScreen({ navigation }){
         style= {styles.btnInit}
         onPress={() => navigation.push('Quests')}
       >
-      <Image style={styles.btnInitImg} source={require('../assets/imgs/satis.jpeg')} blurRadius={1} />
+      <Image style={styles.btnInitImg} resizeMode = 'cover' source={require('../assets/imgs/satis.jpeg')} blurRadius={1} />
       <Text style= {styles.btnInitText}>Pesquisa de Satisfação</Text>
       </TouchableOpacity>
 

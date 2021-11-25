@@ -13,8 +13,8 @@ export default function comm({ navigation }) {
         await AsyncStorage.setItem("comment", comment);
         setDataDB();
         Alert.alert(
-            "Obrigado!!!",
-            "Pesquisa enviada com sucesso.",
+            "Obrigado por participar!",
+            "A Pesquisa enviada com sucesso.",
             [
             
             { text: "OK"}
@@ -26,14 +26,11 @@ export default function comm({ navigation }) {
   return (
     <View style={styles.container} >
         <View style={styles.header}>
-            <Text style={styles.headerText}>
-                Comentário
-            </Text>
             <Image style={styles.img} source={require('../assets/imgs/senai-logo.png')}/>
         </View>
         <View style={styles.body}>
             <Text style={styles.label} >
-               Comentários:
+               Algum comentario a mais?:
             </Text>
             <TextInput  
                 multiline
@@ -56,14 +53,14 @@ export default function comm({ navigation }) {
             style= {styles.btnBack}
             onPress={() => navigation.push('Quests', {'Number': 13 })}
             > 
-            <Text>➡</Text>
+            <Text>▶</Text>
             
         </TouchableOpacity>
         <TouchableOpacity
             style= {styles.btnGo}
             onPress={() => (callSave())}
             >
-            <Text>Enviar</Text>
+            <Text>Confirmar</Text>
             </TouchableOpacity>
     </View>
   );
@@ -76,31 +73,27 @@ container:{
     header:{
         width: "100%", 
         height: "10%", 
-        backgroundColor:"#FF0000",
+        backgroundColor:"#FFF",
         
         flexDirection: "row",
         alignItems:"center",
-        justifyContent: "space-between"
-    },
-    headerText:{
-        fontSize: 20,
-        color:"#F2F7F2",
-        marginLeft: 20
+        justifyContent: "center",
     },
     img:{
         width: "25%",
         height:"80%",
         resizeMode:'contain',
-        marginRight:20
     },
     body:{
         flex: 1, 
         alignItems: 'center', 
         justifyContent: 'center', 
-        backgroundColor: "#F2F7F2" 
+        backgroundColor: "#ededed" 
     },
     label:{
-        marginTop: "5%"
+        marginTop: "5%",
+        marginBottom: "5%"
+
     },
     lgInp:{
         padding: 10,
@@ -127,7 +120,7 @@ container:{
     btnGo: {
       color: 'white',
       fontSize: 20,
-      backgroundColor: 'green',
+      backgroundColor: '#57d959',
       width: 80,
       height: 40,
       display:'flex',

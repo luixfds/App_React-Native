@@ -56,17 +56,17 @@ function Quest({ navigation, route }){
         return(
             <View style={styles.container} >
                 <View style={styles.header}>
-                    <Text style={styles.headerText}>
-                        Pergunta {route.params.Number}:
-                    </Text>
                     <Image style={styles.img} source={require('../assets/imgs/senai-logo.png')}/>
                 </View>
             <View style={styles.body}>
-        
+            
+            <Text style={styles.questionText}>
+                Pergunta {route.params.Number}:
+            </Text>
 
             <View style={{height: '80%', width: '80%'}}>
             <Text>{route.params.Number}. {allQuestions[route.params.Number - 1].Question}</Text>
-            <Text>(Nivel de Importancia:)</Text>
+            <Text>Qual o nivel de importância para você?</Text>
             <View style={styles.rbtCombo}>
                 <RadioButton
                 value="alt"
@@ -74,7 +74,7 @@ function Quest({ navigation, route }){
                 onPress={() => setChecked('alt')}
                 color="black"
                 />
-                <Text>Alta</Text>
+                <Text>Alto</Text>
             </View>
             <View style={styles.rbtCombo}>
                 <RadioButton
@@ -83,7 +83,7 @@ function Quest({ navigation, route }){
                 onPress={() => setChecked('med')}
                 color="black"
                 />
-                <Text>Media</Text>
+                <Text>Medio</Text>
             </View>
             <View style={styles.rbtCombo}>
                 <RadioButton
@@ -92,9 +92,9 @@ function Quest({ navigation, route }){
                 onPress={() => setChecked('bai')}
                 color="black"
                 />
-                <Text>Baixa</Text>
+                <Text>Baixo</Text>
             </View>
-            <Text>(Nivel de Satisfação:)</Text>
+            <Text>Qual seu nivel de Satisfação?</Text>
             <View style={styles.rbtCombo}>
                 <RadioButton
                 value="oti"
@@ -145,7 +145,7 @@ function Quest({ navigation, route }){
             {checkedVal === 'rui' || checkedVal === 'reg' ? 
                 <View style={{height: "20%", marginBottom: "20%"}}>
                     <Text style={styles.label} >
-                    Comentários:
+                    Porque?:
                     </Text>
                     <TextInput  
                         multiline
@@ -166,7 +166,7 @@ function Quest({ navigation, route }){
             style= {styles.btnBack}
             onPress={route.params.Number == 1 ? () => navigation.push('Quests', {'Number': route.params.Number }) : () => (navigation.push('Quests', {'Number': route.params.Number - 1 }), updateChoices())}
             > 
-            <Text>➡</Text>
+            <Text>▶</Text>
             
             </TouchableOpacity>
                 
@@ -179,7 +179,7 @@ function Quest({ navigation, route }){
                             (navigation.push('Quests', {'Number': route.params.Number + 1 }), updateChoices())
                             : Alert.alert("Campos Vazios","Preencha todos os campos par prosseguir",[{ text: "OK"}])}
             >
-            <Text>➡</Text>
+            <Text>▶</Text>
             </TouchableOpacity>
     
             </View>
@@ -200,16 +200,16 @@ const styles = StyleSheet.create({
     header:{
         width: "100%", 
         height: "10%", 
-        backgroundColor:"#FF0000",
-        
+        backgroundColor:"#FFF",
+
         flexDirection: "row",
         alignItems:"center",
-        justifyContent: "space-between"
+        justifyContent: "center"
     },
-    headerText:{
+    questionText:{
         fontSize: 20,
-        color:"#F2F7F2",
-        marginLeft: 20
+        color:"#000000",
+        marginBottom: 30
     },
     label:{
         marginTop: "5%"
@@ -226,13 +226,14 @@ const styles = StyleSheet.create({
         width: "25%",
         height:"80%",
         resizeMode:'contain',
-        marginRight:20
+        marginTop: 10,
+        marginLeft:10
     },
     body:{
         flex: 1, 
         alignItems: 'center', 
         justifyContent: 'center', 
-        backgroundColor: "#F2F7F2" 
+        backgroundColor: "#e8e8e8" 
     },
     btnGo: {
       color: 'white',

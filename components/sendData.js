@@ -11,17 +11,17 @@ export default async function setDataDB(){
         await AsyncStorage.getItem("check" + i).then(value => {
         if(value != null){
             let n = "check"+ i;
-            data["opt" + i] = value
+            data["opção" + i] = value
         }})
         await AsyncStorage.getItem("valCheck"+ i).then(value => {
         if(value != null){
             let n = "valCheck"+ i;
-            data["aws"+ i] = value
+            data["resposta"+ i] = value
         }})
         await AsyncStorage.getItem("comment"+ i).then(value => {
         if(value != null){
             let n = "comment"+ i;
-            data["comment"+ i] = value
+            data["comentario"+ i] = value
         }})
     }
     
